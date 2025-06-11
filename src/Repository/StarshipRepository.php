@@ -22,4 +22,16 @@ class StarshipRepository
             new Starship(4, 'USS Discovery (NCC-1031)', 'Crossfield-class', 'Michael Burnham', 'Active (32nd Century)')
         ];
     }
+
+    public function find(int $id): ?Starship
+    {
+        foreach ($this->findAll() as $starship)
+        {
+            if ($starship->getId() === $id) {
+                return $starship;
+            }
+        }
+
+        return null;
+    }
 }
