@@ -20,7 +20,11 @@
             <th>Status</th>
         </tr>
         <tr>
-            <td>{{ myShip.name }}</td>
+            <td>
+                <a href="{{ path('app_starship_show', {id: myShip.id}) }}">
+                {{ myShip.name }}
+                </a>
+            </td>
             <td>{{ myShip.class }}</td>
             <td>{{ myShip.captain|title }}</td>
             <td>{{ myShip.status }}</td>
