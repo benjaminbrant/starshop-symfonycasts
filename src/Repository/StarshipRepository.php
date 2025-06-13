@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Model\Starship;
+use App\Model\StarshipStatusEnum;
 use Psr\Log\LoggerInterface;
 
 class StarshipRepository
@@ -16,10 +17,10 @@ class StarshipRepository
     {
         $this->logger->info('Fetching starship collection');
         return [
-            new Starship(1, 'USS Enterprise (NCC-1701-D)', 'Galaxy-class', 'Jean-Luc Picard', 'Active'),
-            new Starship(2, 'USS Voyager (NCC-74656)', 'Intrepid-class', 'Kathryn Janeway', 'Active (returned)'),
-            new Starship(3, 'Deep Space Nine', 'Terok Nor (Station)', 'Benjamin Sisko', 'Active'),
-            new Starship(4, 'USS Discovery (NCC-1031)', 'Crossfield-class', 'Michael Burnham', 'Active (32nd Century)')
+            new Starship(1, 'USS Enterprise (NCC-1701-D)', 'Galaxy-class', 'Jean-Luc Picard', StarshipStatusEnum::IN_PROGRESS),
+            new Starship(2, 'USS Voyager (NCC-74656)', 'Intrepid-class', 'Kathryn Janeway', StarshipStatusEnum::IN_PROGRESS),
+            new Starship(3, 'Deep Space Nine', 'Terok Nor (Station)', 'Benjamin Sisko', StarshipStatusenum::WAITING),
+            new Starship(4, 'USS Discovery (NCC-1031)', 'Crossfield-class', 'Michael Burnham', StarshipStatusEnum::COMPLETED)
         ];
     }
 
